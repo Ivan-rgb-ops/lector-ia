@@ -1,0 +1,32 @@
+{
+  "name": "lector-ia",
+  "version": "1.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Lector IA: pasale cualquier texto (PDF, DOCX, TXT o pegado) y te lo lee en voz neuronal.",
+  "engines": {
+    "node": ">=18"
+  },
+  "scripts": {
+    "dev": "concurrently -k -n server,client -c cyan,magenta \"npm:dev:server\" \"npm:dev:client\"",
+    "dev:server": "node --watch server/index.js",
+    "dev:client": "vite",
+    "build": "vite build",
+    "start": "node server/index.js",
+    "test:voice": "node scripts/test-voice.js"
+  },
+  "dependencies": {
+    "@vitejs/plugin-react": "^4.3.4",
+    "express": "^4.21.2",
+    "mammoth": "^1.8.0",
+    "msedge-tts": "^2.0.0",
+    "multer": "^1.4.5-lts.1",
+    "pdfjs-dist": "^4.10.38",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "vite": "^5.4.11"
+  },
+  "devDependencies": {
+    "concurrently": "^9.1.0"
+  }
+}
